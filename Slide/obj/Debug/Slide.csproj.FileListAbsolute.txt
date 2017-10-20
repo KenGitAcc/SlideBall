@@ -1,0 +1,6 @@
+C:\Dev\Test\Slide\Slide\bin\Debug\Slide.exe.config
+C:\Dev\Test\Slide\Slide\bin\Debug\Slide.exe
+C:\Dev\Test\Slide\Slide\bin\Debug\Slide.pdb
+C:\Dev\Test\Slide\Slide\obj\Debug\Slide.exe
+C:\Dev\Test\Slide\Slide\obj\Debug\Slide.pdb
+C:\Dev\Test\Slide\Slide\obj\Debug\Slide.csprojResolveAssemblyReference.cache

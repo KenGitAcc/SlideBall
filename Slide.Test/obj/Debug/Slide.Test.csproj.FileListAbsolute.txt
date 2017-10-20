@@ -1,0 +1,8 @@
+C:\Dev\Test\Slide\Slide.Test\bin\Debug\Slide.Test.dll
+C:\Dev\Test\Slide\Slide.Test\bin\Debug\Slide.Test.pdb
+C:\Dev\Test\Slide\Slide.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Dev\Test\Slide\Slide.Test\obj\Debug\Slide.Test.csprojResolveAssemblyReference.cache
+C:\Dev\Test\Slide\Slide.Test\obj\Debug\Slide.Test.dll
+C:\Dev\Test\Slide\Slide.Test\obj\Debug\Slide.Test.pdb
+C:\Dev\Test\Slide\Slide.Test\bin\Debug\Slide.exe
+C:\Dev\Test\Slide\Slide.Test\bin\Debug\Slide.pdb
