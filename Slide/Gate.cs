@@ -11,12 +11,14 @@ namespace Slide
         public string Name;
         public int Level;
         public int Switches;
+        public string UniqueName;
 
-        public Gate(string name, int level, int switches)
+        public Gate(string name, int level, int switches, string uniqueName)
         {
             this.Name = name;
             this.Level = level;
             this.Switches = switches;
+            this.UniqueName = uniqueName;
         }
     }
 }

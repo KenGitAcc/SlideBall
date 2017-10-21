@@ -4,3 +4,8 @@ C:\Dev\Test\Slide\Slide\bin\Debug\Slide.pdb
 C:\Dev\Test\Slide\Slide\obj\Debug\Slide.exe
 C:\Dev\Test\Slide\Slide\obj\Debug\Slide.pdb
 C:\Dev\Test\Slide\Slide\obj\Debug\Slide.csprojResolveAssemblyReference.cache
+C:\dev\interview\everlight\SlideBall\Slide\bin\Debug\Slide.exe.config
+C:\dev\interview\everlight\SlideBall\Slide\bin\Debug\Slide.exe
+C:\dev\interview\everlight\SlideBall\Slide\bin\Debug\Slide.pdb
+C:\dev\interview\everlight\SlideBall\Slide\obj\Debug\Slide.exe
+C:\dev\interview\everlight\SlideBall\Slide\obj\Debug\Slide.pdb

@@ -14,10 +14,11 @@ namespace Slide
         public static IList<GateContainer> containerList = new List<GateContainer>();
         public static GateNode<Gate> rootGate;
         public static int containerNameStart = 65;
+        public static int uniqueNameStart = 1111;
         enum GateSwitches
         {
-            GoLeft,
-            GoRight
+            GoLeft = 0,
+            GoRight = 1
         }
 
         static private void CreateGateNode(GateNode<Gate> parentGate)
@@ -29,7 +30,7 @@ namespace Slide
             {
                 if (parentGate.Level == totalLevel)
                 {
-                    var container = new GateContainer(((char)containerNameStart).ToString(), false, parentGate.Data.Name);
+                    var container = new GateContainer(((char)containerNameStart).ToString(), false, parentGate.Data.UniqueName + ((int)switchs).ToString());
                     containerList.Add(container);
                     containerNameStart++;
                     
@@ -37,14 +38,15 @@ namespace Slide
                 else
                 {
                     int randomSwitches = random.Next(0, 1);
-                    string gateName = level + switchs.ToString();
+                    string gateName = level + ((int)switchs).ToString();
                     GateNode<Gate> gate = new GateNode<Gate>
                     (
-                        new Gate(gateName, level, randomSwitches)
-                    );
+                        new Gate(gateName, level, randomSwitches, uniqueNameStart.ToString())
+                    );       
                     gate.Level = level;
                     gate.Parent = parentGate;
                     parentGate.AddChild(gate);
+                    uniqueNameStart++;
                     CreateGateNode(gate);
                 }                
             }
@@ -57,10 +59,37 @@ namespace Slide
             int randomSwitches = random.Next(0, 1);
             rootGate = new GateNode<Gate>
             (
-                new Gate(rootName, 1, randomSwitches)
+                new Gate(rootName, 1, randomSwitches,uniqueNameStart.ToString())
             );
+            uniqueNameStart++;
             rootGate.Level = 1;
             CreateGateNode(rootGate);
+        }
+
+        static void goSlide(GateNode<Gate> parentGate)
+        {
+            if (parentGate.Level < totalLevel)
+            {
+                var nextOpeningGateName = (parentGate.Level + 1).ToString() + parentGate.Data.Switches;
+                var nextOpeningGate = parentGate.FindTreeNode(node => node.Data != null && node.Data.Name.Contains(nextOpeningGateName));
+                parentGate.Data.Switches = parentGate.Data.Switches == 0 ? 1 : 0;
+                goSlide(nextOpeningGate);
+            }
+            else
+            {
+                GateContainer container = containerList.Where(a => a.GateName == parentGate.Data.UniqueName + parentGate.Data.Switches).First();
+                container.HasBall = true;
+                parentGate.Data.Switches = parentGate.Data.Switches == 0 ? 1 : 0;
+            }
+            
+        }
+
+        static public void runSlideBall(int balls)
+        {
+            for (int i = 0; i < balls; i++)
+            {
+                goSlide(rootGate);
+            }
         }
 
         static void Main(string[] args)
@@ -90,6 +119,8 @@ namespace Slide
             }
 
             initalSlide();
+
+            runSlideBall(num);
         }
     }
 }
